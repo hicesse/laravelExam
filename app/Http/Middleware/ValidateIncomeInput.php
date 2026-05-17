@@ -36,11 +36,6 @@ class ValidateIncomeInput
                 ->with('error', 'Penghasilan harus lebih dari 0.');
         }
 
-        if ((int) $income > 999_999_999_999) {
-            return redirect()->back()->withInput()
-                ->with('error', 'Penghasilan tidak boleh melebihi 999.999.999.999.');
-        }
-
         return $next($request);
     }
 }
